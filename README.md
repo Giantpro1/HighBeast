@@ -1,0 +1,2 @@
+# HighBeast
+HighBeast Blog project
