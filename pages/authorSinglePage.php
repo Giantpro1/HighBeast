@@ -191,10 +191,10 @@
     </div>
   </footer>
   <!--   Core JS Files   -->
-  <script src="../plugins/jquery-nice-select/js/jquery.js"></script>
-  <script src="../plugins/bootstrap/popper.min.js"></script>
-  <script src="../plugins/bootstrap/smooth-scrollbar.min.js"></script>
-  <script src="../plugins/bootstrap/perfect-scrollbar.min.js"></script>
-  <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="../assets/jquery/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="../assets/jquery/bootstrap.min.js"></script>
     </body>
 </html>

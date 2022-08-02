@@ -164,7 +164,7 @@
                     <a href="./pages/postdetails.php" class="btn btn-outline-primary">Read More</a>
                   </div>
                 </article>
-                    <article class="card">
+                    <article class="card mt-3">
                       <div class="post-slider slider-sm">
                         <img src="./assets/img/home-decor-2.jpg" class="card-img-top" alt="post-thumb">
                       </div>
@@ -707,9 +707,9 @@
       </div>
     </div>
       
+    <script src="./assets/jquery/jquery.min.js"></script>
     <script src="./assets/js/core/popper.min.js"></script>
-    <script src="./assets/js/switch.js"></script>
-    <script src="./assets/js/core/bootstrap.min.js"></script>
+    <script src="./assets/jquery/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="./assets/swiper/SwiperJs.js"></script>
