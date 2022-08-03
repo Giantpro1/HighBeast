@@ -624,7 +624,7 @@
         </div>
         <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
           <a href="" target="_blank" class="text-secondary me-xl-4 me-4">
-            <span class="text-lg fa fa-dribbble"></span>
+            <span class="text-lg fa fa-likedin"></span>
           </a>
           <a href="" target="_blank" class="text-secondary me-xl-4 me-4">
             <span class="text-lg fa fa-twitter"></span>

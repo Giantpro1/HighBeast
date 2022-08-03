@@ -35,7 +35,7 @@
       <div class="container">
         <div class="row mt-lg-n10 mt-md-n11 mt-n10">
           <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
-            <div class="card z-index-0">
+            <div class="card z-index-0 shadow">
               <div class="card-header text-center pt-4">
               </div>
               <div class="card-body">
@@ -57,7 +57,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer py-5">
+  <foo ter class="footer py-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mb-4 mx-auto text-center">
@@ -105,7 +105,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </foo>
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
   <script src="../assets/jquery/jquery.min.js"></script>
@@ -113,6 +113,7 @@
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
+  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -122,7 +123,12 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
+  jquery request 
+      <script>
+      $(document).ready(function(){
+        $("#")
+      })
+      </script>
 </body>
 
 </html>

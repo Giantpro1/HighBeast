@@ -80,7 +80,33 @@
                             <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                             
                             <span class="text-black-800 mr-3 font-weight-600">April 18, 2020 at 6.25 pm</span>
-                            <a class="text-primary font-weight-600" href="#!">Reply</a>
+                            <!-- modal for reply -->
+                            <a role="button" class="text-primary" data-toggle="modal" data-target="#exampleModalCenter"  href="" >Reply</a>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLongTitle">reply</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form method="POST">
+                                            <div class="row">
+                                                <div class="form-group col-md-12">
+                                                    <textarea class="form-control shadow-none" name="comment" rows="7" required></textarea>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-primary">Reply</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                         </div>
                     </div>
                     <div class="media d-block d-sm-flex">
@@ -94,7 +120,35 @@
                             <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
       
                             <span class="text-black-800 mr-3 font-weight-600">April 18, 2020 at 6.25 pm</span>
-                            <a class="text-primary font-weight-600" href="#!">Reply</a>
+                            <!-- modal for reply comment -->
+                            <a role="button" class="text-primary" data-toggle="modal" data-target="#exampleModalCenter"  href="" >Reply</a>
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLongTitle">reply</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        <form method="POST">
+                                            <div class="row">
+                                                <div class="form-group col-md-12">
+                                                    <textarea class="form-control shadow-none" name="comment" rows="7" required></textarea>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                          <button type="button" class="btn btn-primary">Reply</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -137,7 +191,7 @@
         </div>
         <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
           <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-            <span class="text-lg fa fa-dribbble"></span>
+            <span class="text-lg fa fa-linkedin"></span>
           </a>
           <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
             <span class="text-lg fa fa-twitter"></span>

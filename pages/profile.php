@@ -108,9 +108,28 @@
             <div class="nav-wrapper position-relative end-0">
               <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
+                  <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="" role="tab" aria-selected="true">
                     <i class="fa fa-bell"></i>
-                    <span class="ms-1">notifications</span>
+                    <span role="button" data-toggle="modal" class="ms-1" data-target="#exampleModalLong">notifications</sp>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Notifications <i class="fa fa-bell"></i> </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sint ut ducimus,
+                               voluptas consequatur similique ullam quia totam,
+                               nisi provident atque, beatae consequuntur sapiente
+                                tempore accusamus veritatis illum? Est, ex.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </a>
                 </li>
                 <li class="nav-item">
