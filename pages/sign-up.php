@@ -38,29 +38,32 @@
       <div class="container">
         <div class="row mt-lg-n10 mt-md-n11 mt-n10">
           <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
-            <div class="card z-index-0">
+            <div class="card z-index-0 shadow">
               <div class="card-header text-center pt-4">
                 <h5>Register with</h5>
                 <ul class="list-inline">
-                       <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a> </li>
+                       <li class="list-inline-item"><a href="#"><i class="fa fa-github"></i></a> </li>
                        <li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a> </li>
-                       <li class="list-inline-item"><a href="#"><i class="fa fa-apple"></i></a> </li>
+                       <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a> </li>
                       </ul>
               </div>
               <div class="card-body">
-                <form role="form text-left">
+                <form role="form text-left" id="hBUser_Register">
+                  <p class="text-danger" id="formError"></p>
                   <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="FullName" aria-label="Name" aria-describedby="email-addon">
+                    <input type="text" name="hBUser_FullName" class="form-control" placeholder="FullName" aria-label="Name" aria-describedby="email-addon">
                   </div>
                   <div class="mb-3">
-                  <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="email-addon">
+                    <input type="text" name="hBUser_UserName" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="email-addon">
                   </div>
                   <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                    <input type="email" name="hBUser_Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
                   </div>
                   <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <input type="password" name="hBUser_Password" id="hBUser_Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" id="hBUser_ConPassword" class="form-control" placeholder="Confirm Password" aria-label="comfirm password" aria-describedby="password-addon">
                   </div>
                   <div class="form-check form-check-info text-left">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -69,7 +72,7 @@
                     </label>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                    <button type="button" id="hBUser_RegisterBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                   </div>
                   <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in.php" class="text-dark font-weight-bolder">Sign in</a></p>
                 </form>
@@ -136,5 +139,35 @@
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
 </body>
-
+      <!-- script to grab user input info -->
+    <script>
+      $(document).ready(function(){
+        $("#hBUser_RegisterBtn").click(function(error){
+          if(("#hBUser_Register")[0].checkValidity()){
+            error.preventDefault();
+            $("#hBUser_RegisterBtn").text("please Wait...");
+              // validate for password and comfirm password 
+              if($("#hBUser_Password").val() != $("#hBUser_ConPassword").val()){
+                $("#formError").html("* password does not Match");
+              }else{
+                $("#formError").html("");
+                  // ajax request 
+                  $.ajax({
+                    url: "",
+                    method: "POST",
+                    data: $("#hBUser_Register").serialize() + "&action=hBuser_Reg",
+                    success: function(response){
+                      console.log(response)
+                      if(response === "Register"){
+                        window.location = "../index";
+                      }else{
+                        $("#formError").html(response);
+                      }
+                    }
+                  })
+              }
+          }
+        })
+      })
+    </script>
 </html>
