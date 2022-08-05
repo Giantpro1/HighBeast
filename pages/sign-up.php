@@ -143,7 +143,7 @@
     <script>
       $(document).ready(function(){
         $("#hBUser_RegisterBtn").click(function(error){
-          if(("#hBUser_Register")[0].checkValidity()){
+          if($("#hBUser_Register")[0].checkValidity()){
             error.preventDefault();
             $("#hBUser_RegisterBtn").text("please Wait...");
               // validate for password and comfirm password 
@@ -153,15 +153,15 @@
                 $("#formError").html("");
                   // ajax request 
                   $.ajax({
-                    url: "",
+                    url: "http://localhost/DBeast/controller/api/sign-up.php",
                     method: "POST",
                     data: $("#hBUser_Register").serialize() + "&action=hBuser_Reg",
-                    success: function(response){
-                      console.log(response)
-                      if(response === "Register"){
-                        window.location = "../index";
+                    success: function(message){
+                      console.log(message)
+                      if(message === "register successfully"){
+                        window.location = "../index.php";
                       }else{
-                        $("#formError").html(response);
+                        $("#formError").html(message);
                       }
                     }
                   })
