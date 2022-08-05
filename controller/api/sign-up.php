@@ -51,6 +51,7 @@
                     }else {
                         $hpass = password_hash($hBUser_Password, PASSWORD_DEFAULT);
                         $result = $dbs->registerHbUser($hBUser_FullName, $hBUser_UserName, $hBUser_Email, $hpass);
+                        $_SESSION['ourUser'] = $hBUser_UserName;
                         echo json_encode([
                             "message"=> "register successfully",
                             "status"=>200
