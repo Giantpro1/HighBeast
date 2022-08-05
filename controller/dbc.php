@@ -32,4 +32,14 @@ require_once 'config.php';
             $result =$stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
         }
+
+        public function loginHbUser($hBUser_UserName){
+            $sql = "SELECT hBUser_UserName, hBUser_Password FROM hbuser WHERE hBUser_UserName=:hBUser_UserName";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'hBUser_UserName'=>$hBUser_UserName
+            ]);
+            $userFetch =$stmt->fetch(PDO::FETCH_ASSOC);
+            return $userFetch;
+        }
     }
