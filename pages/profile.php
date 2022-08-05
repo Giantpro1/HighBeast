@@ -112,7 +112,7 @@
                     <i class="fa fa-bell"></i>
                     <span role="button" data-toggle="modal" class="ms-1" data-target="#exampleModalLong">notifications</sp>
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -129,7 +129,7 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </a>
                 </li>
                 <li class="nav-item">
