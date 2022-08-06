@@ -157,9 +157,9 @@
                     method: "POST",
                     data: $("#hBUser_Register").serialize() + "&action=hBuser_Reg",
                     success: function(message){
-                      console.log(message)
-                      if(message === "register successfully"){
-                        window.location = "../index.php";
+                       JSON.parse(message)
+                      if(message == "register successfully"){
+                        window.location = "../index";
                       }else{
                         $("#formError").html(message);
                       }

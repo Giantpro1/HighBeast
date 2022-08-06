@@ -144,7 +144,7 @@
             success: function(message){
               JSON.parse(message)
               if(message === 'login Successfully'){
-                window.location = "../index.php"
+                window.location = "../index"
               }else{
                 $("#form_Error").html(message)
               }

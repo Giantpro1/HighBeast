@@ -40,36 +40,36 @@
                 <div class="collapse navbar-collapse" id="navigation">
                   <ul class="navbar-nav mx-auto ms-xl-auto me-xl-7">
                     <li class="nav-item">
-                      <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="../pages/dashboard.html">
+                      <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="">
                         <i class="fa fa-home opacity-6 text-dark me-1"></i>
                         Home
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link me-2" href="./pages/profile.php">
+                      <a class="nav-link me-2" href="./pages/profile">
                         <i class="fa fa-user opacity-6 text-dark me-1"></i>
                         Profile
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link me-2" href="./pages/sign-up.php">
+                      <a class="nav-link me-2" href="./pages/sign-up">
                         <i class="fa fa-user-circle opacity-6 text-dark me-1"></i>
                         Sign Up
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link me-2" href="./pages/sign-in.php">
+                      <a class="nav-link me-2" href="./pages/sign-in">
                         <i class="fa fa-key opacity-6 text-dark me-1"></i>
                         Sign In
                       </a>
                     </li>
                   </ul>
                   <li class="nav-item d-flex align-items-center">
-                    <a class="btn btn-round btn-sm mb-0 btn-outline-primary me-2" href="./pages/upload.php">Upload</a>
+                    <a class="btn btn-round btn-sm mb-0 btn-outline-primary me-2" href="./pages/upload">Upload</a>
                   </li>
                   <ul class="navbar-nav d-lg-block d-none">
                     <li class="nav-item">
-                      <a href="./pages/sign-in.php" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark"></i> Login </a>
+                      <a href="./pages/sign-in" class="btn btn-sm btn-round mb-0 me-1 bg-gradient-dark"></i> Login </a>
                     </li>
                   </ul>
                 </div>
@@ -138,7 +138,7 @@
                   </div>
                   
                   <div class="card-body">
-                    <h3 class="h4 mb-3"><a class="post-title" href="./pages/postdetails.php"> i develop this...</a></h3>
+                    <h3 class="h4 mb-3"><a class="post-title" href="./pages/postdetails"> i develop this...</a></h3>
                     <ul class="card-meta list-inline">
                       <li class="list-inline-item">
                         <a href="author-single.html" class="card-meta-author">
@@ -161,7 +161,7 @@
                       </li>
                     </ul>
                     <p>It’s no secret that the digital industry is booming. From exciting startups to …</p>
-                    <a href="./pages/postdetails.php" class="btn btn-outline-primary">Read More</a>
+                    <a href="./pages/postdetails" class="btn btn-outline-primary">Read More</a>
                   </div>
                 </article>
                     <article class="card mt-3">
@@ -169,7 +169,7 @@
                         <img src="./assets/img/home-decor-2.jpg" class="card-img-top" alt="post-thumb">
                       </div>
                       <div class="card-body">
-                        <h3 class="h4 mb-3"><a class="post-title" href="./pages/postdetails.php">How To Make Cupcakes and Cashmere Recipe At Home</a></h3>
+                        <h3 class="h4 mb-3"><a class="post-title" href="./pages/postdetails">How To Make Cupcakes and Cashmere Recipe At Home</a></h3>
                         <ul class="card-meta list-inline">
                           <li class="list-inline-item">
                             <a href="author-single.html" class="card-meta-author">
@@ -192,7 +192,7 @@
                           </li>
                         </ul>
                         <p>It’s no secret that the digital industry is booming. From exciting startups to …</p>
-                        <a href="./pages/postdetails.php" class="btn btn-outline-primary">Read More</a>
+                        <a href="./pages/postdetails" class="btn btn-outline-primary">Read More</a>
                       </div>
                     </article>
                     <div class="card widget-author mt-5">
@@ -202,7 +202,7 @@
                           <img class="avatar avatar-sm rounded-circle" src="./assets/img/bg1.jpg">
                         </div>
                         <div class="media-body">
-                          <h5 class="mb-1"><a class="post-title" href="./pages/authorSinglePage.php">Charls Xaviar</a></h5>
+                          <h5 class="mb-1"><a class="post-title" href="./pages/authorSinglePage">Charls Xaviar</a></h5>
                           <span>Author &amp; developer of Bexer, Biztrox theme</span>
                         </div>
                       </div>
@@ -211,7 +211,7 @@
                           <img class="avatar avatar-sm rounded-circle" src="./assets/img/ivancik.jpg">
                         </div>
                         <div class="media-body">
-                          <h5 class="mb-1"><a class="post-title" href="./pages/authorSinglePage.php">Kate Stone</a></h5>
+                          <h5 class="mb-1"><a class="post-title" href="./pages/authorSinglePage">Kate Stone</a></h5>
                           <span>Author &amp; developer of Bexer, Biztrox theme</span>
                         </div>
                       </div>
@@ -220,7 +220,7 @@
                           <img class="avatar avatar-sm rounded-circle" src="./assets/img/bruce-mars.jpg" alt="John Doe">
                         </div>
                         <div class="media-body">
-                          <h5 class="mb-1"><a class="post-title" href="./pages/authorSinglePage.php">John Doe</a></h5>
+                          <h5 class="mb-1"><a class="post-title" href="./pages/authorSinglePage">John Doe</a></h5>
                           <span>Author &amp; developer of Bexer, Biztrox theme</span>
                         </div>
                       </div>
@@ -266,7 +266,7 @@
                           </ul>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto ipsa dolores eius,
                       recusandae suscipit</p>
-                      <a href="./pages/postdetails.php" class="text-info text-sm icon-move-right">Read More
+                      <a href="./pages/postdetails" class="text-info text-sm icon-move-right">Read More
                         <i class="fa fa-arrow-right text-xs ms-1"></i>
                       </a> 
                     </div>
@@ -289,7 +289,7 @@
                       <h3>My First aeronautic project</h3>
                       <ul class="card-meta list-inline">
                           <li class="list-inline-item">
-                            <a href="./pages/authorSinglePage.php" class="card-meta-author">
+                            <a href="./pages/authorSinglePage" class="card-meta-author">
                               <img class="avatar avatar-sm rounded-circle" src="./assets/img/bruce-mars.jpg" alt="Kate Stone">
                               <span>Kate Stone</span>
                             </a>
@@ -309,7 +309,7 @@
                           </ul>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto ipsa dolores eius,
                       recusandae suscipit</p>
-                      <a href="./pages/postdetails.php" class="text-info text-sm icon-move-right">Read More
+                      <a href="./pages/postdetails" class="text-info text-sm icon-move-right">Read More
                         <i class="fa fa-arrow-right text-xs ms-1"></i>
                       </a>
                     </div>
@@ -332,7 +332,7 @@
                       <h3>My First aeronautic project</h3>
                       <ul class="card-meta list-inline">
                           <li class="list-inline-item">
-                            <a href="./pages/authorSinglePage.php" class="card-meta-author">
+                            <a href="./pages/authorSinglePage" class="card-meta-author">
                               <img class="avatar avatar-sm rounded-circle" src="./assets/img/bruce-mars.jpg" alt="Kate Stone">
                               <span>Kate Stone</span>
                             </a>
@@ -352,7 +352,7 @@
                           </ul>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto ipsa dolores eius,
                       recusandae suscipit</p>
-                      <a href="./pages/postdetails.php" class="text-info text-sm icon-move-right">Read More
+                      <a href="./pages/postdetails" class="text-info text-sm icon-move-right">Read More
                         <i class="fa fa-arrow-right text-xs ms-1"></i>
                       </a>
                     </div>
@@ -385,7 +385,7 @@
                       <h3>My First aeronautic project</h3>
                       <ul class="card-meta list-inline">
                           <li class="list-inline-item">
-                            <a href="./pages/authorSinglePage.php" class="card-meta-author">
+                            <a href="./pages/authorSinglePage" class="card-meta-author">
                               <img class="avatar avatar-sm rounded-circle" src="./assets/img/bruce-mars.jpg" alt="Kate Stone">
                               <span>Kate Stone</span>
                             </a>
@@ -405,7 +405,7 @@
                           </ul>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto ipsa dolores eius,
                       recusandae suscipit</p>
-                      <a href="./pages/postdetails.php" class="text-info text-sm icon-move-right">Read More
+                      <a href="./pages/postdetails" class="text-info text-sm icon-move-right">Read More
                         <i class="fa fa-arrow-right text-xs ms-1"></i>
                       </a>
                     </div>
@@ -428,7 +428,7 @@
                       <h3>My First aeronautic project</h3>
                       <ul class="card-meta list-inline">
                           <li class="list-inline-item">
-                            <a href="./pages/authorSinglePage.php" class="card-meta-author">
+                            <a href="./pages/authorSinglePage" class="card-meta-author">
                               <img class="avatar avatar-sm rounded-circle" src="./assets/img/bruce-mars.jpg" alt="Kate Stone">
                               <span>Kate Stone</span>
                             </a>
@@ -448,7 +448,7 @@
                           </ul>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto ipsa dolores eius,
                       recusandae suscipit</p>
-                      <a href="./pages/postdetails.php" class="text-info text-sm icon-move-right">Read More
+                      <a href="./pages/postdetails" class="text-info text-sm icon-move-right">Read More
                         <i class="fa fa-arrow-right text-xs ms-1"></i>
                       </a>
                     </div>
@@ -491,7 +491,7 @@
                           </ul>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum iusto ipsa dolores eius,
                       recusandae suscipit</p>
-                      <a href="./pages/postdetails.php" class="text-info text-sm icon-move-right">Read More
+                      <a href="./pages/postdetails" class="text-info text-sm icon-move-right">Read More
                         <i class="fa fa-arrow-right text-xs ms-1"></i>
                       </a>
                     </div>
@@ -508,7 +508,7 @@
                   <div class="card-body d-flex">
                     <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="./assets/img/HighBeastImg/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg">
                     <div class="ml-3">
-                      <h4><a href="./pages/postdetails.php" class="post-title">Advice From a Twenty Something</a></h4>
+                      <h4><a href="./pages/postdetails" class="post-title">Advice From a Twenty Something</a></h4>
                       <ul class="card-meta list-inline mb-0">
                         <li class="list-inline-item mb-0">
                           <i class="ti-calendar"></i>14 jan, 2020
@@ -525,7 +525,7 @@
                   <div class="card-body d-flex">
                     <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="./assets/img/HighBeastImg/scott-blake-x-ghf9LjrVg-unsplash.jpg">
                     <div class="ml-3">
-                      <h4><a href="./pages/postdetails.php" class="post-title">The Design Files - Homes Minimalist</a></h4>
+                      <h4><a href="./pages/postdetails" class="post-title">The Design Files - Homes Minimalist</a></h4>
                       <ul class="card-meta list-inline mb-0">
                         <li class="list-inline-item mb-0">
                           <i class="ti-calendar"></i>14 jan, 2020
@@ -542,7 +542,7 @@
                   <div class="card-body d-flex">
                     <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="./assets/img/HighBeastImg/oliver-pecker-HONJP8DyiSM-unsplash.jpg">
                     <div class="ml-3">
-                      <h4><a href="./pages/postdetails.php" class="post-title">The Skinny Confidential</a></h4>
+                      <h4><a href="./pages/postdetails" class="post-title">The Skinny Confidential</a></h4>
                       <ul class="card-meta list-inline mb-0">
                         <li class="list-inline-item mb-0">
                           <i class="ti-calendar"></i>14 jan, 2020
