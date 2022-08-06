@@ -39,12 +39,13 @@
               <div class="card-header text-center pt-4">
               </div>
               <div class="card-body">
-                <form role="form text-left">
+                <p class="form_Error"></p>
+                <form id="loginHbUser" role="form text-left">
                   <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="">
+                    <input type="text" name="hBUser_UserName" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="">
                   </div>
                   <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <input type="password" name="hBUser_Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                   </div>
                   <div class="form-check form-check-info text-left">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -53,7 +54,7 @@
                     </label>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Login</button>
+                    <button type="button" id="loginHbUserBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Login</button>
                   </div>
                   <p class="text-sm mt-3 mb-0">Don't have an account yet? <a href="sign-up.php" class="text-dark font-weight-bolder">Sign up</a></p>
                 </form>
@@ -128,6 +129,30 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+  </script>
+  <script>
+    $(document).ready(function(){
+      $("#loginHbUserBtn").click(function(e){
+        if($("#loginHbUser")[0].checkValidity()){
+          e.preventDefault()
+          $("#loginHbUserBtn").text("Please Wait...")
+
+          $.ajax({
+            url: 'http://localhost/DBeast/controller/api/sign-in.php',
+            method: 'POST',
+            data:$("loginHbUser").serialize()+'&action=hbUser_Login',
+            success: function(message){
+              JSON.parse(message)
+              if(message === 'login Successfully'){
+                window.location = "../index.php"
+              }else{
+                $("#form_Error").html(message)
+              }
+            }
+          })
+        }
+      })
+    })
   </script>
   <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
 </body>
