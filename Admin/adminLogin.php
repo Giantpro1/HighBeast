@@ -39,15 +39,16 @@
               <div class="card-header text-center pt-4">
               </div>
               <div class="card-body">
-                <form role="form text-left">
+                <form role="form text-left" id="hbAdminSignIn">
+                  <p id="form-Error"></p>
                   <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="">
+                    <input type="text" name="hbAdmin_UserNAme" class="form-control"  placeholder="UserName" aria-label="Name" aria-describedby="">
                   </div>
                   <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
+                    <input type="password" name="hbAdmin_Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Login</button>
+                    <button type="button" id="hbAdminSignInBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Login</button>
                   </div>
                 </form>
               </div>
@@ -126,7 +127,26 @@
   jquery request 
       <script>
       $(document).ready(function(){
-        $("#")
+        $("#hbAdminSignInBtn").click(function(error){
+          if($("#hbAdminSignIn")[0].checkValidity()){
+            error.preventDefault()
+            $("#hbAdminSignInBtn").text("Please Wait...")
+
+            $.ajax({
+              url: '',
+              method: 'POST',
+              data:$("hbAdminSignIn").serialize()+'&action=Admin_log',
+              success: function(message){
+                JSON.parse(message)
+                if(message === 'login Successsfully'){
+                  window.location = "dashboard.php"
+                }else{
+                  $("#form_Error").html(message)
+                }
+              }
+            })
+          }
+        })
       })
       </script>
 </body>
