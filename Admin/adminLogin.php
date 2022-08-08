@@ -42,7 +42,7 @@
                 <form role="form text-left" id="hbAdminSignIn">
                   <p id="form-Error"></p>
                   <div class="mb-3">
-                    <input type="text" name="hbAdmin_UserNAme" class="form-control"  placeholder="UserName" aria-label="Name" aria-describedby="">
+                    <input type="text" name="hbAdmin_UserName" class="form-control"  placeholder="UserName" aria-label="Name" aria-describedby="">
                   </div>
                   <div class="mb-3">
                     <input type="password" name="hbAdmin_Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
@@ -133,13 +133,13 @@
             $("#hbAdminSignInBtn").text("Please Wait...")
 
             $.ajax({
-              url: '',
+              url: 'http://localhost/DBeast/Admin/controller/api/adminLogIn.php',
               method: 'POST',
               data:$("hbAdminSignIn").serialize()+'&action=Admin_log',
               success: function(message){
                 JSON.parse(message)
-                if(message === 'login Successsfully'){
-                  window.location = "dashboard.php"
+                if(message == 'login Successsfully'){
+                  window.location = "dashboard"
                 }else{
                   $("#form_Error").html(message)
                 }
