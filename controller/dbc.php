@@ -42,4 +42,31 @@ require_once 'config.php';
             $userFetch =$stmt->fetch(PDO::FETCH_ASSOC);
             return $userFetch;
         }
+
+        // upload blog
+
+        public function hbUserBlogUpload($pid, $hbUser_BlogTit, $hbUser_BlogCat, $hbUser_BlogDes){
+           $sql = "INSERT INTO hbuserblog (pid, hbUser_BlogTit, hbUser_BlogCat, hbUser_BlogDes) VALUES (:pid, :hbUser_BlogTit, :hbUser_BlogCat, :hbUser_BlogDes)";
+           $stmt = $this->conn->prepare($sql);
+           $stmt->execute([
+            'pid'=>$pid,
+            'hbUser_BlogTit'=>$hbUser_BlogTit,
+            'hbUser_BlogCat'=>$hbUser_BlogCat,
+            'hbUser_BlogDes'=>$hbUser_BlogDes
+           ]);
+           return true;
+        }
+        
+        // blog images 
+
+        public function hbUserBlogUploadImg($pidofimg, $hbUser_BlogImg, $hbUser_BlogImgRand){
+            $sql = "INSERT INTO hbuserblogimg (pidofimg, hbUser_BlogImg, hbUser_BlogImgRand) VALUES (:pidofimg, :hbUser_BlogImg, :hbUser_BlogImgRand)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'pidofimg'=>$pidofimg,
+                'hbUser_BlogImg'=>$hbUser_BlogImg,
+                'hbUser_BlogImgRand'=>$hbUser_BlogImgRand
+            ]);
+            return true;
+        }
     }
