@@ -411,11 +411,11 @@
                                             <form action="">
                                                 <div class="col-md-6">
                                                     <h6>Title for post:</h6>
-                                                    <input type="text"class="form-control w-100 bg-white" placeholder="Tittle">
+                                                    <input type="text" name="hbUser_BlogTit" class="form-control w-100 bg-white" placeholder="Tittle">
                                                 </div>
                                                 <div class="col-md-6">
                                                     <h6 class="font-weight-bold pt-4 pb-1">Select Ad Category:</h6>
-                                                    <select name="sipmUser_AdsCategory" class="form-control w-100 bg-white" id="inputGroupSelect">
+                                                    <select name="hbUser_BlogCat" class="form-control w-100 bg-white" id="inputGroupSelect">
                                                     <option value="">Select category</option>
                                                     <option value="Electronic/Gadget">Aviation</option>
                                                     <option value="Furnitures">Artificial intelligence</option>
@@ -428,7 +428,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                               <h6 class="font-weight-bold pt-4 pb-1">Description:</h6>
-                                                <textarea name="sipmUser_AdsDescripion" id="" class="form-control bg-white" rows="7"
+                                                <textarea name="hbUser_BlogDes" id="" class="form-control bg-white" rows="7"
                                                 placeholder="Write details about your product" required></textarea>
                                             </div>
                                             <div class="col-md-6">
@@ -438,7 +438,7 @@
                                                 <span class="d-block">or</span>
                                                 <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
                                                 <span class="d-block">Maximum upload file size: 500 MB</span>
-                                                <input type="file" class="form-control-file d-none" id="file-upload" multiple name="simpUser_AdsImg[]">
+                                                <input type="file" class="form-control-file d-none" id="file-upload" multiple name="hbUser_BlogImg[]">
                                             </label>
                                             </div>
                                             </div>
