@@ -141,13 +141,6 @@
 </body>
       <!-- script to grab user input info -->
     <script>
-      // const hbUserForm = document.getElementById('hBUser_Register');
-      // hbUserForm.addEventListener('submit', function(e){
-      //   e.preventDefault();
-
-      //   fetch()
-      // })
-
       $(document).ready(function(){
         $("#hBUser_RegisterBtn").click(function(error){
           if($("#hBUser_Register")[0].checkValidity()){
@@ -158,76 +151,20 @@
                 $("#formError").html("* password does not Match");
               }else{
                 $("#formError").html("");
-
-                var myJson = JSON.stringify("#hBUser_Register");
-                  fetch("http://localhost/DBeast/controller/api/sign-up.php", {
-                    method : 'POST',
-                    mode: false,
-                    cache: false, 
-                    Credential: 'same-origin',
-                    headers: {
-                      "Content-Type": "application/json"
-                    },
-                    redirect: 'follow',
-                    referrer: false,
-                    body : myJson
-                  }).then((response) =>{
-                    if(response.ok){
-                      return response.blob();
-                    }else{
-                      throw new Error("Things went Wrong");
+                 // ajax request                 
+                  $.ajax({
+                    url: "http://localhost/DBeast/controller/api/sign-up.php",
+                    method: "POST",
+                    data: $("#hBUser_Register").serialize() + "&action=hBuser_Reg",
+                    success: function(response){
+                        console.log(response)
+                      if(response.message == "register successfully"){
+                        window.location = "../index";
+                      }else{
+                        $("#formError").html(response.message);
+                      }
                     }
-                  }).then((response) => {
-                    // fetch api successful
-                    window.location.href = "../index";
-                  }).catch((error) =>{
-                    console.log(error);
                   })
-
-                // fetch("http://localhost/DBeast/controller/api/sign-up.php", {
-                //   method: 'POST',
-                //   body: JSON.stringify("#hBUser_Register"),
-                //   headers: {"Content-type" : "application/josn; charset=UFT-8"} 
-                // })
-                // .then(response => response.json(response))
-                // .then(json => console.log(json))
-                // .catch(err => console.log(err));
-                // $.ajax({
-                //   headers : {
-                //     ContentType : "application/json", 
-                //     AccessControlAllowOrigin : "*"
-                //   },
-                //   url: "http://localhost/DBeast/controller/api/sign-up.php",
-                //   method: "POST",
-                //   data: $("#hBUser_Register").serialize(),
-                //   dataType: "json",
-                //   // encoded: true,
-                //   beforeSend: function (){
-                //     console.log("Please wait ...")
-                //   },
-                //   success: function (response){
-                //     console.log(response)
-                //     data = JSON.parse(response)
-                //     console.log(data.message)
-                //   }
-                // })
-                  // ajax request                 
-                  // $.ajax({
-                  //   url: "http://localhost/DBeast/controller/api/sign-up.php",
-                  //   method: "POST",
-                  //   data: $("#hBUser_Register").serialize() + "&action=hBuser_Reg",
-                  //   dataType: "json",
-                  //   encode: true,
-                  //   success: function(response){
-                  //      data = JSON.parse(response)
-                  //       console.log(data.message)
-                  //     // if(message == "register successfully"){
-                  //     //   window.location = "../index";
-                  //     // }else{
-                  //     //   $("#formError").html(message);
-                  //     // }
-                  //   }
-                  // })
               }
           }
         })
