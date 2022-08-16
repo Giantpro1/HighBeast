@@ -59,13 +59,12 @@ require_once 'config.php';
         
         // blog images 
 
-        public function hbUserBlogUploadImg($pidofimg, $hbUser_BlogImg, $hbUser_BlogImgRand){
-            $sql = "INSERT INTO hbuserblogimg (pidofimg, hbUser_BlogImg, hbUser_BlogImgRand) VALUES (:pidofimg, :hbUser_BlogImg, :hbUser_BlogImgRand)";
+        public function hbUserBlogUploadImg($pidofimg, $hbUser_BlogImg){
+            $sql = "INSERT INTO hbuserblogimg (pidofimg, hbUser_BlogImg) VALUES (:pidofimg, :hbUser_BlogImg)";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
                 'pidofimg'=>$pidofimg,
-                'hbUser_BlogImg'=>$hbUser_BlogImg,
-                'hbUser_BlogImgRand'=>$hbUser_BlogImgRand
+                'hbUser_BlogImg'=>$hbUser_BlogImg
             ]);
             return true;
         }

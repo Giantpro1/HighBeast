@@ -46,12 +46,12 @@
 
             foreach ($hbUser_BlogImg as $i => $value){
                 $hbUser_BlogImgRand = time(). '_' . rand(200, 1000). '_' .$hbUser_BlogImg[$i];
-                $blogImgFolder = '../media/';
+                $blogImgFolder = '../uploadImg/';
                 $moveFile = $blogImgFolder.$hbUser_BlogImgRand;
                 $pathName = $_FILES['hbUser_BlogImg']['tmp_name'][$i];
                 move_uploaded_file($pathName, $moveFile);
 
-                $imgUploadResult = $dbs->hbUserBlogUploadImg($pidofimg, $hbUser_BlogImg, $hbUser_BlogImgRand);
+                $imgUploadResult = $dbs->hbUserBlogUploadImg($pidofimg, $hbUser_BlogImgRand);
             }
            }else{
             echo json_encode([
