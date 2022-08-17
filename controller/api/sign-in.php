@@ -20,29 +20,30 @@
         }
         if($dbs->validate_param($_POST['hBUser_Password'])){
             $hBUser_Password =$dbs->test_input($_POST['hBUser_Password']);
-        }else{
-            echo json_encode([
-                'message'=>"password field cannot be empty",
-                "status"=>402
-            ]);
-        }
-        $logHbUser =$dbs->loginHbUser($hBUser_UserName);
-        if($logHbUser != null){
-            if(password_verify($hBUser_Password, $logHbUser['hBUser_Password'])){
-                echo json_encode([
-                    "message"=> "login Successfully",
-                    "status"=>200
-                ]);
+            $logHbUser =$dbs->loginHbUser($hBUser_UserName);
+            $_SESSION['ourUser'] = $hBUser_UserName;
+            if($logHbUser != null){
+                if(password_verify($hBUser_Password, $logHbUser['hBUser_Password'])){
+                    echo json_encode([
+                        "message"=> "login Successfully",
+                        "status"=>200
+                    ]);
+                }else{
+                    echo json_encode([
+                        "message"=>"incorrect password",
+                        "status"=>402
+                    ]);
+                }
             }else{
                 echo json_encode([
-                    "message"=>"incorrect password",
-                    "status"=>402
+                    "message"=>"user not found",
+                    "status"=>404
                 ]);
             }
         }else{
             echo json_encode([
-                "message"=>"user not found",
-                "status"=>404
+                'message'=>"password field cannot be empty",
+                "status"=>402
             ]);
         }
     }else{

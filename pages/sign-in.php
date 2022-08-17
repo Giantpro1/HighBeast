@@ -39,8 +39,8 @@
               <div class="card-header text-center pt-4">
               </div>
               <div class="card-body">
-                <p class="form_Error"></p>
                 <form id="loginHbUser" role="form text-left">
+                <p class="text-danger" id="form_Error"></p>
                   <div class="mb-3">
                     <input type="text" name="hBUser_UserName" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="">
                   </div>
@@ -56,7 +56,7 @@
                   <div class="text-center">
                     <button type="button" id="loginHbUserBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Login</button>
                   </div>
-                  <p class="text-sm mt-3 mb-0">Don't have an account yet? <a href="sign-up.php" class="text-dark font-weight-bolder">Sign up</a></p>
+                  <p class="text-sm mt-3 mb-0">Don't have an account yet? <a href="sign-up" class="text-dark font-weight-bolder">Sign up</a></p>
                 </form>
               </div>
             </div>
@@ -118,18 +118,7 @@
   <!--   Core JS Files   -->
   <script src="../assets/jquery/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
   <script>
     $(document).ready(function(){
       $("#loginHbUserBtn").click(function(e){
@@ -140,13 +129,13 @@
           $.ajax({
             url: 'http://localhost/DBeast/controller/api/sign-in.php',
             method: 'POST',
-            data:$("loginHbUser").serialize()+'&action=hbUser_Login',
-            success: function(message){
-              JSON.parse(message)
-              if(message === 'login Successfully'){
+            data:$("#loginHbUser").serialize(),
+            success: function(response){
+              console.log(response)
+              if(response.message === 'login Successfully'){
                 window.location = "../index"
               }else{
-                $("#form_Error").html(message)
+                $("#form_Error").html(response.message)
               }
             }
           })
@@ -154,7 +143,6 @@
       })
     })
   </script>
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
 </body>
 
 </html>
