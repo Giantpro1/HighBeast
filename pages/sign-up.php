@@ -51,10 +51,10 @@
                 <form role="form text-left" id="hBUser_Register">
                   <p class="text-danger" id="formError"></p>
                   <div class="mb-3">
-                    <input type="text" name="hBUser_FullName" class="form-control" placeholder="FullName" aria-label="Name" aria-describedby="email-addon">
+                    <input type="text" name="hBUser_FullName" class="form-control" placeholder="FullName" aria-label="Name" aria-describedby="Name-addon">
                   </div>
                   <div class="mb-3">
-                    <input type="text" name="hBUser_UserName" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="email-addon">
+                    <input type="text" name="hBUser_UserName" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="Name-addon">
                   </div>
                   <div class="mb-3">
                     <input type="email" name="hBUser_Email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
@@ -74,7 +74,7 @@
                   <div class="text-center">
                     <button type="button" id="hBUser_RegisterBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                   </div>
-                  <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in.php" class="text-dark font-weight-bolder">Sign in</a></p>
+                  <p class="text-sm mt-3 mb-0">Already have an account? <a href="sign-in" class="text-dark font-weight-bolder">Sign in</a></p>
                 </form>
               </div>
             </div>
@@ -135,8 +135,6 @@
   <!--   Core JS Files   -->
   <script src="../assets/jquery/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
 </body>
       <!-- script to grab user input info -->
