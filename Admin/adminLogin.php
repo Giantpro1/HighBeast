@@ -40,7 +40,7 @@
               </div>
               <div class="card-body">
                 <form role="form text-left" id="hbAdminSignIn">
-                  <p id="form-Error"></p>
+                  <p class="text-danger" id="form-Error"></p>
                   <div class="mb-3">
                     <input type="text" name="hbAdmin_UserName" class="form-control"  placeholder="UserName" aria-label="Name" aria-describedby="">
                   </div>
@@ -111,19 +111,8 @@
   <!--   Core JS Files   -->
   <script src="../assets/jquery/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.5"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script>
+
   jquery request 
       <script>
       $(document).ready(function(){
@@ -135,13 +124,13 @@
             $.ajax({
               url: 'http://localhost/DBeast/Admin/controller/api/adminLogIn.php',
               method: 'POST',
-              data:$("hbAdminSignIn").serialize()+'&action=Admin_log',
-              success: function(message){
-                JSON.parse(message)
-                if(message == 'login Successsfully'){
-                  window.location = "dashboard"
+              data:$("#hbAdminSignIn").serialize(),
+              success: function(response){
+                console.log(response)
+                if(response.message == 'login Successfully'){
+                  window.location = "./dashboard"
                 }else{
-                  $("#form_Error").html(message)
+                  $("#form-Error").html(response.message)
                 }
               }
             })
