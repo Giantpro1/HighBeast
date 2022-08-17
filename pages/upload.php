@@ -35,20 +35,21 @@
                         </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <form action="">
+                                    <form action="" id="hbUser_BlogUpload" enctype="multipart/form-data">
                                         <div class="col-md-6">
                                             <h6>Title for post:</h6>
+                                            <p id="upload_Error"></p>
                                             <input type="text" name="hbUser_BlogTit" class="form-control w-100 bg-white" placeholder="Tittle">
                                         </div>
                                         <div class="col-md-6">
                                             <h6 class="font-weight-bold pt-4 pb-1">Select Ad Category:</h6>
                                             <select name="hbUser_BlogCat" class="form-control w-100 bg-white" id="inputGroupSelect">
                                             <option value="">Select category</option>
-                                            <option value="Electronic/Gadget">Aviation</option>
-                                            <option value="Furnitures">Artificial intelligence</option>
-                                            <option value="Real Estate">Automobile</option>
-                                            <option value="Vehicles">wood Works</option>
-                                            <option value="Job/Employments">Construction</option>
+                                            <option value="Aviation">Aviation</option>
+                                            <option value="Artificial intelligence">Artificial intelligence</option>
+                                            <option value="Automobile">Automobile</option>
+                                            <option value="wood Works">wood Works</option>
+                                            <option value="Construction">Construction</option>
                                             </select>
                                         </div>
                                 </div>
@@ -71,19 +72,39 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center mt-3">
-                                    <button class="btn btn-info px-6">upload</button>
+                                    <button class="btn btn-info px-6" id="hbUser_BlogUploadBtn">upload</button>
                                 </div>
-                                    </form>
+                            </form>
                                 
                             
                     </div>
                 </div>
             </section>
         </main>
+        <!-- send formData for blogUpload -->
+
+
         <script src="../assets/jquery/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
+  <script>
+            $(document).ready(function(){
+                $("#hbUser_BlogUpload").submit(function(e){
+                        e.preventDefault()
+                        $("#hbUser_BlogUploadBtn").text("pleaseWait...")
+                        $.ajax({
+                            url: 'http://localhost/DBeast/controller/api/uploadBlog.php',
+                            method: 'POST',
+                            cache: false,
+                            processData: false,
+                            contentType: false,
+                            data: new FormData(this),
+                            success: function(response){
+                                console.log(response)
+                            }
+                        })
+                })
+            })
+        </script>
     </body>
 </html>

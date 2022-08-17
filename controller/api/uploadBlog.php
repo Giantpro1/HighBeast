@@ -61,7 +61,7 @@
            }
 
         }else{
-            json_encode([
+          echo json_encode([
                 'message'=>'error wrong format',
                 'status'=>402
             ]);
