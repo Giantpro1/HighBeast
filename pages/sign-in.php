@@ -57,6 +57,7 @@
                     <button type="button" id="loginHbUserBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Login</button>
                   </div>
                   <p class="text-sm mt-3 mb-0">Don't have an account yet? <a href="sign-up" class="text-dark font-weight-bolder">Sign up</a></p>
+                  <p class="text-sm mt-3 mb-0"><a href="forgottenPass" class="text-dark font-weight-bolder">forgotten password? </a></p>
                 </form>
               </div>
             </div>
