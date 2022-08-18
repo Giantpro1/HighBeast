@@ -49,14 +49,26 @@
                             "status"=>402
                         ]);
                     }else {
-                        $hpass = password_hash($hBUser_Password, PASSWORD_DEFAULT);
-                        $result = $dbs->registerHbUser($hBUser_FullName, $hBUser_UserName, $hBUser_Email, $hpass);
-                        $_SESSION['ourUser'] = $hBUser_UserName;
-                        echo json_encode([
-                            "message"=> "register successfully",
-                            "status"=>200
-                        ]);
-                    }
+                        $uppercase = preg_match('@[A-Z]@', $hBUser_Password);
+                        $lowercase = preg_match('@[a-z]@', $hBUser_Password);
+                        $number = preg_match('@[0-9]@', $hBUser_Password);
+                        $specialChars = preg_match('@[^\W]@', $hBUser_Password);
+                        if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($hBUser_Password) < 8 ){
+                          echo json_encode([
+                            'message'=> "password should be at least 8 characters in lengths and should include at least one upper case letter, one number, and one special characters",
+                            'status'=>400
+                          ]);
+                        }else{
+                            $hpass = password_hash($hBUser_Password, PASSWORD_DEFAULT);
+                            $result = $dbs->registerHbUser($hBUser_FullName, $hBUser_UserName, $hBUser_Email, $hpass);
+                            $_SESSION['ourUser'] = $hBUser_UserName;
+                            echo json_encode([
+                                "message"=> "register successfully",
+                                "status"=>200
+                            ]);
+                        }
+                            
+                        }
             }else{
                 echo json_encode([
                     "message"=>"error wrong format",

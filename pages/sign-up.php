@@ -49,7 +49,7 @@
               </div>
               <div class="card-body">
                 <form role="form text-left" id="hBUser_Register">
-                  <p class="text-danger" id="formError"></p>
+                  <p class="text-danger formError" id="formError"></p>
                   <div class="mb-3">
                     <input type="text" name="hBUser_FullName" class="form-control" placeholder="FullName" aria-label="Name" aria-describedby="Name-addon">
                   </div>
@@ -146,9 +146,9 @@
             $("#hBUser_RegisterBtn").text("please Wait...");
               // validate for password and comfirm password 
               if($("#hBUser_Password").val() != $("#hBUser_ConPassword").val()){
-                $("#formError").html("* password does not Match");
+                $(".formError").html("* password does not Match");
               }else{
-                $("#formError").html("");
+                $(".formError").html("");
                  // ajax request                 
                   $.ajax({
                     url: "http://localhost/DBeast/controller/api/sign-up.php",
@@ -159,7 +159,7 @@
                       if(response.message == "register successfully"){
                         window.location = "../index";
                       }else{
-                        $("#formError").html(response.message);
+                        $(".formError").html(response.message);
                       }
                     }
                   })
