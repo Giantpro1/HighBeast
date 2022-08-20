@@ -21,6 +21,15 @@ require_once 'config.php';
             return (!empty($value));
         }
 
+            // get result
+            public function getResult() {
+                $val = $this->conn;
+                $this->conn = array();
+                return $val;
+            }
+
+
+
         // to check user exit info of email
 
         public function user_exitsEmail($hBUser_Email){
