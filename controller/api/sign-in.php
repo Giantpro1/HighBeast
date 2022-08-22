@@ -15,8 +15,8 @@
         
         $data = json_decode(file_get_contents("php://input", true));
 
-        if($dbs->validate_param($_POST['hBUser_UserName'])){
-            $hBUser_UserName = $dbs->test_input($_POST['hBUser_UserName']);
+        if($dbs->validate_param($_POST['hBUser_UserInput'])){
+            $hBUser_UserInput = $dbs->test_input($_POST['hBUser_UserInput']);
         }else{
             echo json_encode([
                 "message"=> "UserName Field Cannot Be empty",
@@ -31,7 +31,7 @@
                 "status"=>402
             ]);
         }
-        $dbs->loginHbUser($hBUser_UserName);
+        $dbs->loginHbUser($hBUser_UserInput);
         // $_SESSION['ourUser'] = $hBUser_UserName;
             $hbUSersData = $dbs->getResult();
             foreach($hbUSersData as $data){

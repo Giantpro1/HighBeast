@@ -21,13 +21,6 @@ require_once 'config.php';
             return (!empty($value));
         }
 
-            // get result
-            public function getResult() {
-                $val = $this->conn;
-                $this->conn = array();
-                return $val;
-            }
-
 
 
         // to check user exit info of email
@@ -42,14 +35,23 @@ require_once 'config.php';
             return $result;
         }
 
-        public function loginHbUser($hBUser_UserName){
-            $sql = "SELECT hBUser_UserName, hBUser_Password FROM hbuser WHERE hBUser_UserName=:hBUser_UserName";
+        public function loginHbUser($hBUser_UserInput){
+            $sql = "SELECT hBUser_UserName, hBUser_Password, hBUser_Email FROM hbuser WHERE hBUser_UserName=:hBUser_UserInput OR hBUser_Email=:hBUser_UserInput";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
-                'hBUser_UserName'=>$hBUser_UserName
+                'hBUser_UserInput'=>$hBUser_UserInput
             ]);
             $userFetch =$stmt->fetch(PDO::FETCH_ASSOC);
             return $userFetch;
+        }
+
+                    // get result
+        public function getResult(){
+            $sql = "SELECT * FROM hbuser  WHERE hBUser_UserName=:hBUser_UserName OR hBUser_Email=:hBUser_Email";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
         }
 
         // upload blog
@@ -77,4 +79,11 @@ require_once 'config.php';
             ]);
             return true;
         }
+
+        //   public  function loginWithGoogle(){
+        //     $sql = "SELECT google_id FROM users WHERE google_id ='$id'";
+        //     $stmt = $this->conn->prepare($sql);
+        //     $stmt->execute();
+        //     }
+
     }

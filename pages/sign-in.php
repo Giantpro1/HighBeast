@@ -42,7 +42,7 @@
                 <form id="loginHbUser" role="form text-left">
                 <p class="text-danger" id="form_Error"></p>
                   <div class="mb-3">
-                    <input type="text" name="hBUser_UserName" class="form-control" placeholder="UserName" aria-label="Name" aria-describedby="">
+                    <input type="text" name="hBUser_UserInput" class="form-control" placeholder="UserName or Email" aria-label="Name" aria-describedby="">
                   </div>
                   <div class="mb-3">
                     <input type="password" name="hBUser_Password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
