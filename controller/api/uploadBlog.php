@@ -28,17 +28,17 @@
             }
             if($dbs->validate_param($_POST['hbUser_BlogDes'])){
                 $hbUser_BlogDes = $dbs->test_input($_POST['hbUser_BlogDes']);
+                $result = $dbs->hbUserBlogUpload($pid, $hbUser_BlogTit, $hbUser_BlogCat, $hbUser_BlogDes);
+                echo json_encode([
+                    "message"=>"upload successfully",
+                    "status"=>200
+                ]);
             }else{
                 echo json_encode([
                     'message'=>'Blog Desciption Cannot Empty',
                     'status'=>404
                 ]);
             }
-            $result = $dbs->hbUserBlogUpload($pid, $hbUser_BlogTit, $hbUser_BlogCat, $hbUser_BlogDes);
-            echo json_encode([
-                "message"=>"upload successfully",
-                "status"=>200
-            ]);
 
            if(isset($_FILES['hbUser_BlogImg'])){
             $pidofimg = $dbs->test_input($_POST['pidofimg']);
@@ -52,6 +52,10 @@
                 move_uploaded_file($pathName, $moveFile);
 
                 $imgUploadResult = $dbs->hbUserBlogUploadImg($pidofimg, $hbUser_BlogImgRand);
+                echo json_encode([
+                    'message'=>"img upload successfully",
+                    'status'=>200
+                ]);
             }
            }else{
             echo json_encode([
