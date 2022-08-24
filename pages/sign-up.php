@@ -1,4 +1,6 @@
-
+<?php
+include "../controller/api/sighUpwithGoogle.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +45,7 @@
                 <h5>Register with</h5>
                 <ul class="list-inline">
                        <li class="list-inline-item"><a href="#"><i class="fa fa-github"></i></a> </li>
-                       <li class="list-inline-item"><a href="signUpWithGoogle"><i class="fa fa-google"></i></a> </li>
+                       <li class="list-inline-item"><a href="<?php echo $client->createAuthUrl(); ?>"><i class="fa fa-google"></i></a> </li>
                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a> </li>
                       </ul>
               </div>

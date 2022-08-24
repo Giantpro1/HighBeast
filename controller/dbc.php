@@ -80,10 +80,18 @@ require_once 'config.php';
             return true;
         }
 
-        //   public  function loginWithGoogle(){
-        //     $sql = "SELECT google_id FROM users WHERE google_id ='$id'";
-        //     $stmt = $this->conn->prepare($sql);
-        //     $stmt->execute();
-        //     }
+
+            // save user info into google into my db
+            
+            public function saveUserFromGoogleInDb($google_id, $name, $email){
+               $sql = "INSERT INTO hbuser (google_id, hBUser_UserName, hBUser_Email ) VALUES (:google_id, :name, :email)";
+               $stmt = $this->conn->prepare($sql);
+               $stmt->execute([
+                'google_id'=>$google_id,
+                'hBUser_UserName'=>$name,
+                'hBUser_Email'=>$email
+               ]);
+               return true;
+            }
 
     }
