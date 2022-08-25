@@ -6,6 +6,8 @@ class Database {
     private $dsn = "mysql:host=localhost; dbname=highbeastdb";
     private $pass = "";
 
+    private $result = array();
+
     public $conn;
 //     throw error if connection is false
     public function __construct(){
@@ -25,6 +27,12 @@ class Database {
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
+    }
+
+    public function getResult() {
+        $val = $this->result;
+        $this->result = array();
+        return $val;
     }
 
 }
