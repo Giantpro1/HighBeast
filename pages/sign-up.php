@@ -1,5 +1,6 @@
 <?php
-include "../controller/api/sighUpwithGoogle.php";
+set_include_path(dirname(__FILE__)."/../");
+require "controller/api/sighUpwithGoogle.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

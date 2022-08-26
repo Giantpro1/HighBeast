@@ -4,9 +4,9 @@
     // header('Content-type: application/json');
     // header('Access-Control-Allow-Method: GET');
     // header('Access-Control-Allow-Header: Origin, content-Type, Accept');
-
-    require_once '../dbc.php';
-    require_once '../google-api-php-client-2.4.0/google-api-php-client-2.4.0/vendor/autoload.php';
+    set_include_path(dirname(__FILE__)."/../");
+    require_once ('dbc.php');
+    require_once ('google-api-php-client-2.4.0/google-api-php-client-2.4.0/vendor/autoload.php');
 
     $client = new Google_Client();
     $dbs = new Dbc();
