@@ -33,21 +33,26 @@
         }
         $dbs->loginHbUser($hBUser_UserInput);
         // $_SESSION['ourUser'] = $hBUser_UserName;
-            $hbUSersData = $dbs->getResult();
+            $hbUSersData = $dbs->getResult($hBUser_UserInput);
             foreach($hbUSersData as $data){
                 $id = $data['id'];
                 $hBUser_FullName = $data['hBUser_FullName'];
                 $hBUser_UserName = $data['hBUser_UserName'];
                 $hBUser_Email = $data['hBUser_Email'];
-                if(password_verify($hBUser_Password, $data['hBUser_Password'])){
+                if(!password_verify($hBUser_Password, $data['hBUser_Password'])){
+                    echo json_encode([
+                        'message'=> 'incorrect password',
+                        'status'=>402
+                    ]);
+                }else{
                     $payload = [
                         'iss' => "localhost",
                         'aud' => "localhost",
                         'exp' => time() + 2000,
                         'data' => [
                             'id' => $id,
-                            'hBUser_FullName' =>$hBUser_FullName ,
-                            'hBUser_UserName' =>$hBUser_UserName ,
+                            'hBUser_FullName' =>$hBUser_FullName,
+                            'hBUser_UserName' =>$hBUser_UserName,
                             'hBUser_Email' =>$hBUser_Email 
                         ],
                     ];
@@ -57,11 +62,6 @@
                         "message"=> "login Successfully",
                         'jwt'=> $jwt,
                         "status"=>200
-                    ]);
-                }else{
-                    echo json_encode([
-                        'message'=> 'incorrect password',
-                        'status'=>402
                     ]);
                 }
             }

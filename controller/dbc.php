@@ -36,7 +36,7 @@ require_once 'config.php';
         }
 
         public function loginHbUser($hBUser_UserInput){
-            $sql = "SELECT hBUser_UserName, hBUser_Password, hBUser_Email FROM hbuser WHERE hBUser_UserName=:hBUser_UserInput OR hBUser_Email=:hBUser_UserInput";
+            $sql = "SELECT hBUser_UserName, hBUser_Password FROM hbuser WHERE hBUser_UserName=:hBUser_UserInput";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
                 'hBUser_UserInput'=>$hBUser_UserInput
@@ -46,16 +46,15 @@ require_once 'config.php';
         }
 
                     // get result
-        // public function getResult($hBUser_UserName, $hBUser_Email){
-        //     $sql = "SELECT * FROM hbuser  WHERE hBUser_UserName=:hBUser_UserName OR hBUser_Email=:hBUser_Email";
-        //     $stmt = $this->conn->prepare($sql);
-        //     $stmt->execute([
-        //         'hBUser_UserName'=>$hBUser_UserName,
-        //         'hBUser_Email'=>$hBUser_Email
-        //     ]);
-        //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        //     return $result;
-        // }
+        public function getResult($hBUser_UserInput){
+            $sql = "SELECT * FROM hbuser  WHERE hBUser_UserName=:hBUser_UserName";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                'hBUser_UserName'=>$hBUser_UserInput
+            ]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }
 
         // upload blog
 

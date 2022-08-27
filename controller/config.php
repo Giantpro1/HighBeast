@@ -6,7 +6,7 @@ class Database {
     private $dsn = "mysql:host=localhost; dbname=highbeastdb";
     private $pass = "";
 
-    private $result = array();
+    // private $result = array();
 
     public $conn;
 //     throw error if connection is false
@@ -29,11 +29,11 @@ class Database {
         return $data;
     }
 
-    public function getResult() {
-        $val = $this->result;
-        $this->result = array();
-        return $val;
-    }
+    // public function getResult() {
+    //     $val = $this->result;
+    //     $this->result = array();
+    //     return $val;
+    // }
 
 }
 
