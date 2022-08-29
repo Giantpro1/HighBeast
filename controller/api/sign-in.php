@@ -33,7 +33,7 @@
         }
         $dbs->loginHbUser($hBUser_UserInput);
         // $_SESSION['ourUser'] = $hBUser_UserName;
-            $hbUSersData = $dbs->getResult($hBUser_UserInput);
+            $hbUSersData = $dbs->getResult();
             foreach($hbUSersData as $data){
                 $id = $data['id'];
                 $hBUser_FullName = $data['hBUser_FullName'];

@@ -46,14 +46,19 @@ require_once 'config.php';
         }
 
                     // get result
-        public function getResult($hBUser_UserInput){
-            $sql = "SELECT * FROM hbuser  WHERE hBUser_UserName=:hBUser_UserName";
-            $stmt = $this->conn->prepare($sql);
-            $stmt->execute([
-                'hBUser_UserName'=>$hBUser_UserInput
-            ]);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
+        // public function getResult($hBUser_UserInput){
+        //     $sql = "SELECT * FROM hbuser  WHERE hBUser_UserName=:hBUser_UserName";
+        //     $stmt = $this->conn->prepare($sql);
+        //     $stmt->execute([
+        //         'hBUser_UserName'=>$hBUser_UserInput
+        //     ]);
+        //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        //     return $result;
+        // }
+        public function getResult() {
+            $val = $this->result;
+           $this->conn->result = array();
+            return $val;
         }
 
         // upload blog

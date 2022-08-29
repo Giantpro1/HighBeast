@@ -27,9 +27,9 @@
                         $google_oauth = new Google_Service_Oauth2($client);
                         $google_account_info = $google_oauth->userinfo->get();
                         // saving
-                        $google_id = $dbs->test_input($google_account_info->id);
-                        $name = $dbs->test_input($google_account_info->name);
-                        $email = $dbs->test_input($google_account_info->email);
+                        $google_id = $dbs->test_input($_POST[$google_account_info->id]);
+                        $name = $dbs->test_input($_POST[$google_account_info->name]);
+                        $email = $dbs->test_input($_POST[$google_account_info->email]);
                             $insert = $dbs->saveUserFromGoogleInDb($google_id, $name, $email);
                             if($insert){
                                 echo "successfully";
