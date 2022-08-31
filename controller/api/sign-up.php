@@ -1,12 +1,18 @@
 <?php
 
+
         header('Access-Control-Allow-Origin: *');
         header('Content-type: application/json');
         header('Access-Control-Allow-Method: POST');
         header('Access-Control-Allow-Header: Origin, content-Type, Accept');
 
+        use PHPMailer\PHPMailer\PHPMailer;
+        use PHPMailer\PHPMailer\SMTP;
+        use PHPMailer\PHPMailer\Exception;
         require_once '../dbc.php';
+        require '../PHPMailer/vendor/autoload.php';
 
+        $mail = new PHPMailer(true);
         $dbs = new Dbc();
 
             if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -62,10 +68,48 @@
                             $hpass = password_hash($hBUser_Password, PASSWORD_DEFAULT);
                             $result = $dbs->registerHbUser($hBUser_FullName, $hBUser_UserName, $hBUser_Email, $hpass);
                             $_SESSION['ourUser'] = $hBUser_UserName;
-                            echo json_encode([
-                                "message"=> "register successfully",
-                                "status"=>200
-                            ]);
+                            $link = 'http://localhost/DBeast/index';
+                            if($result){
+                                try{
+                                     //Server settings
+                                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                                $mail->isSMTP();                                            //Send using SMTP
+                                $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
+                                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                                $mail->Username   = 'brittainipowell9@gmail.com';                     //SMTP username
+                                $mail->Password   = '(123@Brittaini_Powell)';                               //SMTP password
+                                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+                                $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+                                //Recipients
+                                $mail->setFrom('brittainipowell9@gmail.com', 'Mailer');
+                                $mail->addAddress($hBUser_Email);     //Add a recipient
+                                // $mail->addAddress('ellen@example.com');               //Name is optional
+                                $mail->addReplyTo('brittainipowell9@gmail.com');
+                                // $mail->addCC('cc@example.com');
+                                // $mail->addBCC('bcc@example.com');
+
+                                //Attachments
+                                // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+                                // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+                                //Content
+                                $mail->isHTML(true);                                  //Set email format to HTML
+                                $mail->Subject = 'Account Verification';
+                                $mail->Body    = '<P> Welcome to Higbeast'.$hBUser_UserName.'</p> 
+                                '. '<bold> click on the link to activate your account.</bold>'.$link;
+                                // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                                $mail->send();
+                                // echo 'Message has been sent';
+                                }catch(Exception $e){
+
+                                }
+                                echo json_encode([
+                                    "message"=> "register successfully",
+                                    "status"=>200
+                                ]);
+                            }
                         }
                             
                         }
