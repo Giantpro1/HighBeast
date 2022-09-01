@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,7 +41,7 @@
                 <form id="" role="form text-left">
                 <p class="text-danger" id="form_Error"></p>
                   <div class="mb-3">
-                    <input type="text" name="" class="form-control" placeholder="Enter Email" aria-label="Email" aria-describedby="">
+                    <input type="text" name="hbUserEmail_Forgotten" class="form-control" placeholder="Enter Email" aria-label="Email" aria-describedby="">
                   </div>
                   <div class="text-center">
                     <button type="button" id="" class="btn bg-gradient-dark w-100 my-4 mb-2">Continue</button>
@@ -117,13 +116,13 @@
           $("#loginHbUserBtn").text("Please Wait...")
 
           $.ajax({
-            url: '',
+            url: './controller/api/TSEFPR.php',
             method: 'POST',
             data:$("").serialize(),
             success: function(response){
               console.log(response)
               if(response.message === ''){
-                window.location = "../index"
+                window.location = ""
               }else{
                 $("#form_Error").html(response.message)
               }

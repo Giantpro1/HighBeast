@@ -82,8 +82,8 @@
                                 $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
                                 //Recipients
-                                $mail->setFrom('brittainipowell9@gmail.com', 'Mailer');
-                                $mail->addAddress($hBUser_Email);     //Add a recipient
+                                $mail->setFrom('brittainipowell9@gmail.com', 'verify your email');
+                                $mail->addAddress($_POST['hBUser_Email']);     //Add a recipient
                                 // $mail->addAddress('ellen@example.com');               //Name is optional
                                 $mail->addReplyTo('brittainipowell9@gmail.com');
                                 // $mail->addCC('cc@example.com');
@@ -96,8 +96,10 @@
                                 //Content
                                 $mail->isHTML(true);                                  //Set email format to HTML
                                 $mail->Subject = 'Account Verification';
-                                $mail->Body    = '<P> Welcome to Higbeast'.$hBUser_UserName.'</p> 
-                                '. '<bold> click on the link to activate your account.</bold>'.$link;
+                                $mail->Body    = 'Hi'.$hBUser_FullName.','.
+                                'We just need to verify your email address before you can access Highbeast portal.'.
+                                'Verify your email address'.$link.'Thanks! – The Highbeast team'
+                                ;
                                 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                                 $mail->send();
