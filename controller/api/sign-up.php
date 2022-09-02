@@ -104,13 +104,13 @@
 
                                 $mail->send();
                                 // echo 'Message has been sent';
-                                }catch(Exception $e){
-
-                                }
                                 echo json_encode([
                                     "message"=> "register successfully",
                                     "status"=>200
                                 ]);
+                                }catch(Exception $e){
+                                    echo "message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                                }
                             }
                         }
                             

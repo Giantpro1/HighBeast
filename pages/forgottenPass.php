@@ -38,13 +38,13 @@
               <div class="card-header text-center pt-4">
               </div>
               <div class="card-body">
-                <form id="" role="form text-left">
+                <form id="passReset" role="form text-left">
                 <p class="text-danger" id="form_Error"></p>
                   <div class="mb-3">
-                    <input type="text" name="hbUserEmail_Forgotten" class="form-control" placeholder="Enter Email" aria-label="Email" aria-describedby="">
+                    <input type="email" name="hBUser_Email" class="form-control" placeholder="Enter Email" aria-label="Email" aria-describedby="">
                   </div>
                   <div class="text-center">
-                    <button type="button" id="" class="btn bg-gradient-dark w-100 my-4 mb-2">Continue</button>
+                    <button type="submit" id="passResetBtn" class="btn bg-gradient-dark w-100 my-4 mb-2">Continue</button>
                   </div>
                 </form>
               </div>
@@ -107,24 +107,30 @@
   <!--   Core JS Files   -->
   <script src="../assets/jquery/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/jquery/sweetAlert.js"></script>
   <script src="../assets/jquery/bootstrap.min.js"></script>
   <script>
     $(document).ready(function(){
-      $("#loginHbUserBtn").click(function(e){
-        if($("#loginHbUser")[0].checkValidity()){
+      $("#passResetBtn").click(function(e){
+        if($("#passResetBtn")[0].checkValidity()){
           e.preventDefault()
-          $("#loginHbUserBtn").text("Please Wait...")
+          $("#passResetBtn").text("Please Wait...")
 
           $.ajax({
-            url: './controller/api/TSEFPR.php',
+            url: '../controller/api/TSEFPR.php',
             method: 'POST',
-            data:$("").serialize(),
+            data:$("passReset").serialize(),
             success: function(response){
               console.log(response)
-              if(response.message === ''){
-                window.location = ""
+              if(response === 'Message has been sent'){
+                swal.fire({
+                  title: 'Success',
+                  text: 'check your email for token!',
+                  icon: 'success'
+                });
+                // window.location = ""
               }else{
-                $("#form_Error").html(response.message)
+                $("#form_Error").html(response)
               }
             }
           })
